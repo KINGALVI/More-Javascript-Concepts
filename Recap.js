@@ -8,4 +8,5 @@ let alviFuction = ( num1 , num2 ) =>{
 }
 
 const alviResult = alviFuction( 5 , 5 );
+
 console.log(alviResult)
