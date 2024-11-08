@@ -59,3 +59,38 @@ const ColckId = setInterval(() => {
 
 
 
+// ৪। Javascript এ try, catch, throw এবং finally ব্যবহার করে Error Handling করার পদ্ধতি ।
+
+document.getElementById('input-field-button').addEventListener('click', function () {
+    const inputField = document.getElementById('input-field');
+    const inputFieldText = inputField.value;
+    inputField.value = ''
+    const errorText = document.getElementById('error-text');
+
+
+    try {
+        const number = parseInt(inputFieldText);
+
+        if (isNaN(number)) {
+            throw 'Please Put Some Number !';
+        }
+
+        else if (number < 18) {
+            throw 'Kids Are Not Alowed !'
+        }
+
+        else if (number > 50) {
+            throw 'Old People Are Not Alowed !'
+        }
+        errorText.innerText = ''
+
+    }
+    catch (error) {
+        errorText.innerText = error;
+    }
+    finally {
+        setTimeout(() => {
+            alert('All Done Inside Try Catch');
+        }, 1000);
+    }
+})
