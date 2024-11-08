@@ -26,3 +26,32 @@ const LoadData2 = async () => {
 }
 
 LoadData2();
+
+
+
+
+
+// ২। Javascript এ যদি কোনো Function বা Program Browser এর ভিতরে Website Load হয়ে যাওয়ার কিছু সময় পর দেখাতে চায় তাহলে settimeout ব্যবহার করতে হবে ।
+
+setTimeout(() => {
+    console.log('Lazy Log')
+}, 3000)
+
+
+
+
+
+// ৩। Javascript এ যদি কোনো Function বা Program Browser এর ভিতরে Website Load হয়ে যাওয়ার কিছু সময় পর পর দেখাতে চায় তাহলে setInterval ব্যবহার করতে হবে ।
+
+let number = 0;
+
+const ColckId = setInterval(() => {
+
+    number++;
+
+    if (number >= 5) {
+        clearInterval(ColckId);
+    }
+    console.log(ColckId, number);
+})
+
